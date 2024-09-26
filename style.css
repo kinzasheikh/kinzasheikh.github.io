@@ -232,39 +232,43 @@ button:hover {
   to { opacity: 1; }
 }
 
-.banner, .product-grid img {
+/* .banner, .product-grid img {
   animation: fadeIn 1s ease-in;
-}
+} */
 
+/* Banner Section */
 .banner {
   position: relative;
   height: 100vh; /* Full-screen height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  overflow: hidden; /* Prevents overflow of video */
+  width: 100vw; /* Full-screen width */
+  overflow: hidden; /* Prevents overflow */
 }
 
+/* Video */
 #bg-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  object-fit: cover; /* Ensures video covers the section without distorting */
-  z-index: -1; /* Ensures the video stays in the background */
+  object-fit: contain; /* Ensures video scales but doesn't zoom */
+  z-index: -1; /* Keeps video behind overlay */
 }
 
+/* Overlay with text and button */
 .overlay {
-  position: relative;
-  z-index: 1; /* Ensures content is above the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the overlay */
+  z-index: 1; /* Keeps the overlay above the video */
+  color: white;
+  text-align: center;
 }
 
 .overlay h1 {
   font-size: 3rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Makes the text readable over the video */
 }
 
 .overlay p {
@@ -275,7 +279,7 @@ button:hover {
 .btn {
   padding: 15px 30px;
   background-color: #333;
-  color: #fff;
+  color: white;
   text-decoration: none;
   border-radius: 25px;
   transition: background-color 0.3s ease;
