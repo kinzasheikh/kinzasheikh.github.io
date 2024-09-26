@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Center alignment for product details */
+    .product-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* Product image styling */
+    #product-image {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #000;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Rent</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Product Details Section -->
+  <section class="product-details">
+    <div class="product-view">
+      <img id="product-image" src="" alt="Product Image" width="300px">
+      <h1 id="product-name">Product Name</h1>
+      <p id="product-price">$0.00</p>
+      <p id="product-description">Description of the item will go here.</p>
+      <button id="add-to-cart">Add to Cart</button>
+      <button id="message-buyer">Message Buyer</button>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript to dynamically display product details from URL parameters
+    function getQueryParams() {
+      const params = {};
+      window.location.search.replace(/^\?/, '').split('&').forEach(function(param) {
+        const parts = param.split('=');
+        params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+      });
+      return params;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const params = getQueryParams();
+      document.getElementById('product-name').textContent = params.name || "No Product Name";
+      document.getElementById('product-price').textContent = `$${params.price}` || "$0.00";
+      document.getElementById('product-image').src = params.image || "default.jpg";
+      
+      // Add a sample description or make it dynamic if you have descriptions in URL params
+      const descriptions = {
+        1: "This is a high-quality Merino wool coat, perfect for winter.",
+        2: "Stylish Mango belted longline coat, ideal for autumn."
+        // Add more descriptions for other product IDs as needed
+      };
+      document.getElementById('product-description').textContent = descriptions[params.id] || "No description available.";
+    });
+  </script>
+</body>
+</html>

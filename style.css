@@ -1,0 +1,286 @@
+/* Global Styles */
+body {
+  font-family: Didot;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  background-color: white;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-title{
+  font-family: "Didot";
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* Banner Section */
+.banner {
+  background-color: #f0f0f0;
+  padding: 50px;
+  text-align: center;
+}
+
+.banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+/* Shop and Product Styles */
+.shop, .product-details, .profile, .messages {
+  padding: 50px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+.homepagephoto{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.rentalprice{
+  color: gray;
+}
+/* Basic styles for nav-links */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links li {
+  position: relative; /* Important for dropdown positioning */
+  margin-right: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Style for dropdown menu */
+.shop-dropdown .dropdown-menu {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%; /* Position dropdown just below the parent item */
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.shop-dropdown .dropdown-menu li {
+  display: block;
+}
+
+.shop-dropdown .dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.shop-dropdown .dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.shop-dropdown:hover .dropdown-menu {
+  display: block;
+}
+.shop-dropdown .dropdown-title {
+  font-weight: bold;
+  padding: 10px 20px;
+  color: #000;
+  background-color: #f9f9f9;
+  pointer-events: none; /* Make it non-clickable */
+}
+
+  /* Ensure product links are not underlined and are the correct color */
+  .product-grid a {
+    text-decoration: none !important; /* Remove underlining forcefully */
+    color: #333 !important; /* Set a neutral color and ensure it applies */
+  }
+
+  /* Make sure visited links do not turn purple */
+  .product-grid a:visited {
+    color: #333 !important; /* Force visited links to have the same color */
+  }
+
+  /* Change color and underline only on hover */
+  .product-grid a:hover {
+    text-decoration: underline !important; /* Underline only on hover */
+    color: #000 !important; /* Change hover color to black */
+  }
+
+  /* For product titles specifically */
+  .product-grid h2 {
+    color: #333 !important; /* Ensure product titles are dark gray or black */
+    font-weight: bold;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .product-grid img {
+    border-radius: 15px; /* Adds a modern rounded edge to images */
+    transition: transform 0.3s ease;
+  }
+
+  .product-grid img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+.btn {
+  background-color: #000;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 25px; /* Rounded corners for a sleek look */
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #DD6D71; /* Change color on hover */
+}
+.nav-links li a:hover {
+  border-bottom: 2px solid #333; /* Subtle underline on hover */
+  color: red; /* Change color on hover */
+  transition: 0.150s ease-in-out;
+}
+/* Example CSS for fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.banner, .product-grid img {
+  animation: fadeIn 1s ease-in;
+}
+
+.banner {
+  position: relative;
+  height: 100vh; /* Full-screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Prevents overflow of video */
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Ensures video covers the section without distorting */
+  z-index: -1; /* Ensures the video stays in the background */
+}
+
+.overlay {
+  position: relative;
+  z-index: 1; /* Ensures content is above the video */
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 15px 30px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #555;
+}
