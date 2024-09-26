@@ -232,6 +232,10 @@ button:hover {
   to { opacity: 1; }
 }
 
+/* .banner, .product-grid img {
+  animation: fadeIn 1s ease-in;
+} */
+
 /* Banner Section */
 .banner {
   position: relative;
